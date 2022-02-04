@@ -10,5 +10,5 @@ export const getHealth = (req, res) => {
 
 export const getCivics = (req, res) => {
     //Send the file for the correct wordlist
-    res.send();
+    res.sendFile("C:/Users/catsr/Documents/Computer Science/Medical-Wordle/server/index/civics.html");
 }
