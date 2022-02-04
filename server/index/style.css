@@ -30,12 +30,11 @@ body{
     color: var(--text-color);
 }
 
-a{
-    color: var(--link-color);
+.toaster{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    pointer-events: none;
+    width: fit-content;
 }
-
-a:hover{
-    text-decoration: underline;
-    filter: brightness(80%);
-}
-
