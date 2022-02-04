@@ -2,17 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-<<<<<<< Updated upstream
   "main": "app.js",
   "type": "module",
   "scripts": {
     "start": "nodemon app.js"
-=======
-  "main": "code.js",
-  "type": "module",
-  "scripts": {
-    "start": "nodemon code.js"
->>>>>>> Stashed changes
   },
   "keywords": [],
   "author": "",
@@ -20,11 +13,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",
-<<<<<<< Updated upstream
     "nodemon": "^2.0.15",
     "path": "^0.12.7"
-=======
-    "nodemon": "^2.0.15"
->>>>>>> Stashed changes
   }
 }
