@@ -7,10 +7,45 @@
     </head>
     <body>
         <script src = "dark.js"></script>
+        <script>
+            (function(){
+                //defining the hash before the main bundle access window.hash
+                window.medicalwordle = window.medicalwordle || {};
+                window.medicalwordle.hash = 'e65ce0a5';
+                
+            })();
+        </script>
         <div id ="root"></div>
         <gameapp>
             #shadow-root (open) == $0
-
+            <game-theme-manager>
+                <slot>
+                
+                </slot>
+                <div id = "game">
+                    <header>
+                        <div class = "menu">
+                          <button id = "help-button" class = "icon" aria-label="help">
+                              <game-icon icon="help">
+                                  #shadow-root(open)
+                                  <svg xmlns ="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                                      <path fill="var(--color-tone-3)" d="M11 18h2v-2h-2v2zm1-16c6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 808 8 3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"></path>
+                                  </svg>
+                              </game-icon> 
+                          </button>  
+                        </div>
+                        <div class="title">MEDICALWORDLE</div>
+                        <div class="menu">
+                            <button id ="DarkMode" class="icon" aria-label="Dark Mode">
+                                <game-icon icon="Dark Mode">
+                                    #shadow-root(open)
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                                </game-icon>
+                            </button>
+                        </div>
+                    </header>
+                </div>
+            </game-theme-manager>
         </gameapp>
     </body>
 </html>
