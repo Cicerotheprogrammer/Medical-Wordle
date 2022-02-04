@@ -5,6 +5,8 @@ export const getHomePage = (req, res) => {
 
 export const getHealth = (req, res) => {
     //Send the file for the correct wordlist
+    res.setHeader('Content-Type', 'C:/Users/catsr/Documents/Computer Science/Medical-Wordle/server/index/style.css');
+    res.setHeader('Content-Type', 'C:/Users/catsr/Documents/Computer Science/Medical-Wordle/server/index/code.js');
     res.sendFile("C:/Users/catsr/Documents/Computer Science/Medical-Wordle/server/index/health.html");
 }
 
