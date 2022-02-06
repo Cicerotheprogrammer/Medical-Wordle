@@ -1,4 +1,4 @@
-export const BODYSTRUCTURESANDFUNCTIONS = [
+const BODYSTRUCTURESANDFUNCTIONS = [
     "abdomen",
     "abdominal cavity",
     "abdominalpelvic cavity",
@@ -1299,3 +1299,5 @@ export const BODYSTRUCTURESANDFUNCTIONS = [
     "zygote",
     "zygomatic"
 ];
+
+export default BODYSTRUCTURESANDFUNCTIONS;

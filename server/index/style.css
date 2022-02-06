@@ -21,7 +21,11 @@ html[data-theme='dark']{
     --background-color: #212a2e;
     --text-color: #121416d8;
     --link-color: #828fff;
+}
 
+[data-theme='dark'] .d-block-dark,
+[data-theme='light'] .d-block-light {
+    display: block !important;
 }
 
 body{

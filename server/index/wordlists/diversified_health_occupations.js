@@ -1,4 +1,4 @@
-export const DIVERSIFIEDHEALTHOCCUPATIONS = [
+const DIVERSIFIEDHEALTHOCCUPATIONS = [
     "abbreviation",
     "abdominal",
     "abduction",
@@ -1163,3 +1163,5 @@ export const DIVERSIFIEDHEALTHOCCUPATIONS = [
     "xiphoid process",
     "yellow marrow",
 ];
+
+export default DIVERSIFIEDHEALTHOCCUPATIONS;
