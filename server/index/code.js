@@ -12,7 +12,6 @@ const pickRandomTerm = () => {
     }
 
     return chosenWord.toUpperCase();
-
 }
 
 console.log(pickRandomTerm());
