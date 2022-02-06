@@ -188,3 +188,259 @@ button.icon{
 .tile[data-state='correct']{
     background-color: var(--color-correct);
 }
+.tile[data-state='present']{
+    background-color: var(--color-present);
+}
+.tile[data-animation='pop']{
+    animation-name: PopIn;
+    animation-duration: 100ms;
+}
+@keyframes PopIn {
+
+    from{
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    40%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+.tile[data-animation='flip-in']{
+    animation-name: FlipIn;
+    animation-duration: 250ms;
+    animation-timing-function: ease-in;
+}
+@keyframes FlipIn {
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(-90deg);
+    }
+}
+.tile[data-animation='flip-out']{
+    animation-name: FlipOut;
+    animation-duration: 250;
+    animation-timing-function: ease-in;
+}
+@keyframes FlipOut {
+    0%{
+        transform: rotateX-(-90deg);
+    }
+    100%{
+        transform: rotateX(0);
+    }
+}
+:host{
+    height: var(--keyboard-height);
+}
+#keyboard{
+    margin: 0 8px;
+    user-select: none;
+}
+.row{
+    display: flex;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+button{
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    margin: 0 6px 0 0;
+    height: 58px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--key-bg);
+    color: var(--key-text-color);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+button:focus{
+    outline: none;
+}
+button.fade{
+    transition: var(--background-color)0.1s ease, color 0.1s ease;
+}
+button:last-of-type{
+    margin: 0;
+}
+.half{
+    flex: 1;
+}
+.one{
+    flex: 1;
+}
+.one-and-a-half{
+    flex: 1.5;
+    font-size: 12px;
+}
+.two{
+    flex: 2;
+}
+button[data-state='correct']{
+    background-color: var(--key-bg-correct);
+    color: var(--key-evaluated-text-color);
+}
+button[data-state='absent']{
+    background-color: var(--key-bg-absent);
+    color: var(--key-evaluated-text-color);
+}
+.overlay{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--opacity-50);
+    z-index: 3000;
+}
+:host([open]).overlay{
+    display: flex;
+}
+.content{
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid var(--color-tone-6);
+    background-color: var(--modal-content-bg);
+    color: var(--color-tone-1);
+    box-shadow: 0 4px 23px 0 rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    animation: SlideIn 200ms;
+    max-width: var(--game-max-width);
+    padding: 16px;
+    box-sizing: border-box;
+
+}
+.content.closing{
+    animation: SlideOut 200ms;
+}
+.close-icon{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+game-icon{
+    position: fixed;
+    user-select: none;
+    cursor: pointer;
+}
+@keyframes SlideIn {
+    0%{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes SlideOut {
+    0%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(60px);
+    }
+}
+.overlay{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    background-color: var(--color-background);
+    animation: SlideIn 100ms linear;
+    z-index: 2000;
+}
+:host([open]){
+    display: flex;
+}
+.content{
+    position: relative;
+    color: var(--color-tone-1);
+    padding: 0 32px;
+    max-width: var(--game-max-width);
+    width: 100%;
+    overflow-y: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content-container{
+    height: 100%;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+h1{
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+}
+game-icon{
+    position: absolute;
+    right: 0;
+    user-select: none;
+    cursor: pointer;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+    .content{
+        max-width: 100%;
+        padding: 0;
+    }
+    game-icon{
+        padding: 0 16px;
+    }
+}
+@keyframes SlideIn {
+    0%{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes SlideOut {
+    0%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(60px);
+    }
+}
